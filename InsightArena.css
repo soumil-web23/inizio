@@ -1,0 +1,568 @@
+@font-face {
+    font-family: "PoppinsExtraBold";
+    src: url("../assets/fonts/Poppins-ExtraBold.ttf") format("truetype");
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "PoppinsBold";
+    src: url("../assets/fonts/Poppins-Bold.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "PoppinsMedium";
+    src: url("../assets/fonts/Poppins-Medium.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+.card-container {
+    width: 250px;
+    height: 180px;
+    border-radius: 8px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: black;
+    overflow: hidden;
+    background-color: white;
+}
+  
+.card-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+  
+.card-content {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    z-index: 1;
+}
+  
+.card-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; 
+    padding: 10px;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+    background-color: white; 
+}
+  
+.card-container img:hover {
+    transform: scale(1.05);
+}
+
+@font-face {
+    font-family: "LexendExtraBold";
+    src: url("../assets/fonts/Lexend-ExtraBold.ttf") format("truetype");
+    font-weight: 800;
+    font-style: normal;
+}
+
+/* Update the existing styles */
+.insight-arena {
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+    overflow-x: hidden;
+}
+
+.header h1 {
+    font-family: "PoppinsExtraBold", sans-serif;
+    font-size: 4rem;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+}
+
+.header p.tagline {
+    font-family: "Roboto", sans-serif;
+    color: #ff6b00;
+    font-weight: 800;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+}
+
+.header .description {
+    font-family: "Roboto", sans-serif;
+    color: #333;
+    max-width: 800px;
+    margin-left: auto;
+    font-size: 1.3rem;
+    line-height: 1.5;
+    letter-spacing: 1px;
+}
+
+.partner-header h2 {
+    font-family: "PoppinsExtraBold", sans-serif;
+    font-size: 4rem;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+}
+
+.partner-header p.tagline {
+    font-family: "Roboto", sans-serif;
+    color: #ff6b00;
+    font-weight: 800;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+}
+
+.partner-header .description {
+    font-family: "Roboto", sans-serif;
+    max-width: 800px;
+    margin-left: auto;
+    color: #333;
+    font-size: 1.3rem;
+    line-height: 1.5;
+    letter-spacing: 1px;
+}
+
+.card {
+    flex: 0 0 300px;
+    height: 200px;
+    padding: 1.5rem;
+    margin: 0 0.5rem;
+    background-color: #000;
+    border: 1px solid #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    border-radius: 4px;
+    color: white;
+}
+
+.card h3 {
+    font-family: "PoppinsBold", sans-serif;
+    font-size: 1.8rem;
+    margin-bottom: 0.25rem;
+}
+
+.card p {
+    font-family: "Roboto", sans-serif;
+    font-size: 1.1rem;
+    color: #888;
+    letter-spacing: 0.5px;
+}
+
+/* Add responsive styles */
+@media (max-width: 992px) {
+    .header h1,
+    .partner-header h2 {
+        font-size: 3.5rem;
+    }
+
+    .header p.tagline,
+    .partner-header p.tagline {
+        font-size: 1.3rem;
+    }
+
+    .header .description,
+    .partner-header .description {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 780px) {
+    .header h1,
+    .partner-header h2 {
+        font-size: 3rem;
+    }
+
+    .card h3 {
+        font-size: 1.6rem;
+    }
+
+    .card p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .header h1,
+    .partner-header h2 {
+        font-size: 2.3rem;
+    }
+
+    .header p.tagline,
+    .partner-header p.tagline {
+        font-size: 1.2rem;
+    }
+
+    .header .description,
+    .partner-header .description {
+        font-size: 1rem;
+    }
+}
+/* src/components/InsightArena.css */
+.insight-arena {
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+.insight-arena * {
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    padding: 2rem 0;
+}
+
+.section {
+    margin-bottom: 5rem;
+}
+
+.header {
+    text-align: right;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    background-color: #fff5cf;
+    color: #000;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+}
+
+.header p.tagline {
+    color: #ff6b00;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.header .description {
+    color: #333;
+    max-width: 800px;
+    margin-left: auto;
+}
+
+.slider-container {
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+.slider {
+    display: flex;
+    width: max-content; /* Allow content to determine width */
+}
+
+.slider-ltr {
+    animation: slide-left 20s linear infinite;
+}
+
+.slider-rtl {
+    animation: slide-right 20s linear infinite;
+}
+
+@keyframes slide-left {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes slide-right {
+    0% {
+        transform: translateX(-50%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.card {
+    flex: 0 0 300px;
+    height: 200px;
+    padding: 1rem;
+    margin: 0 0.5rem;
+    background-color: #000;
+    border: 1px solid #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    border-radius: 4px;
+    color: white;
+}
+
+.card h3 {
+    margin-bottom: 0.25rem;
+}
+
+.card p {
+    font-size: 0.8rem;
+    color: #888;
+}
+
+.partner-section {
+    background-color: #fff5cf;
+    padding: 2rem 0;
+    color: #000;
+}
+
+.partner-header {
+    text-align: right;
+    margin-bottom: 2rem;
+    padding: 0 2rem;
+}
+
+.partner-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+}
+
+.partner-header p.tagline {
+    color: #ff6b00;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.partner-header .description {
+    max-width: 800px;
+    margin-left: auto;
+    color: #333;
+}
+
+.footer {
+    background-color: #15151a;
+    color: #fff;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.footer-logo {
+    max-width: 150px;
+    margin-bottom: 1rem;
+}
+
+.footer-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.footer-column {
+    margin-bottom: 1rem;
+    min-width: 200px;
+    flex: 1;
+}
+
+.footer-column h3 {
+    margin-bottom: 1rem;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.social-icons a {
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .card {
+        flex: 0 0 calc(100vw / 2);
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-info {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        flex: 0 0 100vw;
+    }
+
+    .header h1,
+    .partner-header h2 {
+        font-size: 2rem;
+    }
+}
+
+.header h1 {
+    font-family: "PoppinsExtraBold", sans-serif;
+    font-size: 6rem; /* Increased from 4rem */
+    line-height: 1;
+    margin-bottom: 1rem;
+}
+
+.header p.tagline {
+    font-family: "Roboto", sans-serif;
+    color: #ff6b00;
+    font-weight: 800;
+    font-size: 1.6rem; /* Increased from 1.4rem */
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+}
+
+.header .description {
+    font-family: "Roboto", sans-serif;
+    color: #333;
+    max-width: 800px;
+    margin-left: auto;
+    font-size: 1.5rem; /* Increased from 1.3rem */
+    line-height: 1.5;
+    letter-spacing: 1px;
+}
+
+.partner-header h2 {
+    font-family: "PoppinsExtraBold", sans-serif;
+    font-size: 6rem; /* Increased from 4rem */
+    line-height: 1;
+    margin-bottom: 1rem;
+}
+
+.partner-header p.tagline {
+    font-family: "Roboto", sans-serif;
+    color: #ff6b00;
+    font-weight: 800;
+    font-size: 1.6rem; /* Increased from 1.4rem */
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+}
+
+.partner-header .description {
+    font-family: "Roboto", sans-serif;
+    max-width: 800px;
+    margin-left: auto;
+    color: #333;
+    font-size: 1.5rem; /* Increased from 1.3rem */
+    line-height: 1.5;
+    letter-spacing: 1px;
+}
+
+.card {
+    flex: 0 0 300px;
+    height: 200px;
+    padding: 2rem; /* Increased padding */
+    margin: 0 1rem;
+    background-color: #000;
+    border: 1px solid #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    border-radius: 4px;
+    color: white;
+}
+
+.card h3 {
+    font-family: "PoppinsBold", sans-serif;
+    font-size: 2.2rem; /* Increased from 1.8rem */
+    margin-bottom: 0.5rem;
+}
+
+.card p {
+    font-family: "Roboto", sans-serif;
+    font-size: 1.3rem; /* Increased from 1.1rem */
+    color: #888;
+    letter-spacing: 0.5px;
+}
+
+/* Update responsive breakpoints */
+@media (max-width: 992px) {
+    .header h1,
+    .partner-header h2 {
+        font-size: 5rem;
+    }
+
+    .header p.tagline,
+    .partner-header p.tagline {
+        font-size: 1.5rem;
+    }
+
+    .header .description,
+    .partner-header .description {
+        font-size: 1.4rem;
+    }
+
+    .card h3 {
+        font-size: 2rem;
+    }
+
+    .card p {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 780px) {
+    .header h1,
+    .partner-header h2 {
+        font-size: 4rem;
+    }
+
+    .card h3 {
+        font-size: 1.8rem;
+    }
+
+    .card p {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .header h1,
+    .partner-header h2 {
+        font-size: 3rem;
+    }
+
+    .header p.tagline,
+    .partner-header p.tagline {
+        font-size: 1.3rem;
+    }
+
+    .header .description,
+    .partner-header .description {
+        font-size: 1.2rem;
+    }
+
+    .card h3 {
+        font-size: 1.6rem;
+    }
+
+    .card p {
+        font-size: 1rem;
+    }
+}
